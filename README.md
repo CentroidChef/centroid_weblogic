@@ -1,4 +1,5 @@
 # centroid_weblogic
 
-TODO: Enter the cookbook description here.
+This is going to be an Oracle WebLogic installation cookbook.
 
+Current Status: Work in Progress

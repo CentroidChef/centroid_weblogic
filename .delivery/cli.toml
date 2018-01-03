@@ -1,0 +1,7 @@
+server = "chef-automate.centroid.com"
+api_protocol = "https"
+user = "kirt.martin"
+enterprise = "Centroid"
+organization = "centroid"
+git_port = "8989"
+pipeline = "master"
