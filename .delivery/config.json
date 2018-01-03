@@ -5,11 +5,21 @@
     "path": ".delivery/build_cookbook"
   },
   "delivery-truck": {
+    "publish": {
+      "chef_server": true
+    },
     "lint": {
       "enable_cookstyle": true
     }
   },
-  "skip_phases": [],
+  "skip_phases": [
+    "quality",
+    "security",
+    "provision",
+    "deploy",
+    "smoke",
+    "functional"
+  ],
   "job_dispatch": {
     "version": "v2"
   },
