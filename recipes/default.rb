@@ -107,7 +107,7 @@ template "#{node['centroid_weblogic']['tmp_dir']}/wls_12c.rsp" do
   owner node['centroid_weblogic']['os_user']
   group node['centroid_weblogic']['os_group']
   variables(middleware_home_dir: node['centroid_weblogic']['middleware_home_dir'],
-          install_type: node['centroid_weblogic']['install_type'])
+            install_type: node['centroid_weblogic']['install_type'])
 end
 
 # Run the installation
