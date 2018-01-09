@@ -54,7 +54,7 @@ end
 
 # Unpack the JDK into the /java directory
 execute 'Unpack JDK' do
-  command "tar xzvf /stage/jdk-8u151-linux-x64.tar.gz --directory /java"
+  command 'tar xzvf /stage/jdk-8u151-linux-x64.tar.gz --directory /java'
 end
 
 # Set this java version into the list of alternatives (it will be the default version on a clean system)
@@ -66,7 +66,7 @@ end
 
 # Set correct user and owner of /java directories
 execute 'chown java_home' do
-  command "chown -R root:root /java"
+  command 'chown -R root:root /java'
 end
 
 # add oraInst.loc to /etc for the oracle inventory location
