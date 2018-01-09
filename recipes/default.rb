@@ -101,13 +101,13 @@ end
 
 # Setup the Weblogic 12c response file for the silent install
 template "#{node['centroid_weblogic']['tmp_dir']}/wls_12c.rsp" do
-    cookbook 'centroid_weblogic'
-    source 'wls_12c.rsp.erb'
-    mode 0755
-    owner node['centroid_weblogic']['os_user']
-    group node['centroid_weblogic']['os_group']
-    variables(middleware_home_dir: node['centroid_weblogic']['middleware_home_dir'],
-              install_type: node['centroid_weblogic']['install_type'])
+  cookbook 'centroid_weblogic'
+  source 'wls_12c.rsp.erb'
+  mode 0755
+  owner node['centroid_weblogic']['os_user']
+  group node['centroid_weblogic']['os_group']
+  variables(middleware_home_dir: node['centroid_weblogic']['middleware_home_dir'],
+          install_type: node['centroid_weblogic']['install_type'])
 end
 
 # Run the installation
