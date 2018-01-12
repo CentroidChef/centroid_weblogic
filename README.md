@@ -11,7 +11,7 @@ Java 8 (jdk1.8.0_151)
 
 ## Current Status: Testing Phase
 
-Code is complete and testing has begun.
+Adding default domain creation and testing has started.
 
 ## Cookbook Description
 
@@ -22,8 +22,7 @@ This cookbook will do the following by default:
   3) Install Java 8 onto the system.
   4) Create "oracle" user and "oinstall" group.
   5) Install Weblogic 12c as a silent install.
-
-No domains are created by this cookbook.
+  6) Creates a default domain (default_domain)
 
 ## Cookbook Usage
 
