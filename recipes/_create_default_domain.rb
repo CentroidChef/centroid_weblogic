@@ -38,8 +38,16 @@ end
 
 # Start WebLogic Domain
 # execute 'Start WebLogic Domain' do
-#   command "nohup #{node['centroid_weblogic']['middleware_home_dir']}/user_projects/domain/default_domain/startWebLogic.sh > weblogic.out &"
-#   user node['centroid_weblogic']['os_user']
-#   group node['centroid_weblogic']['os_group']
-#   #only_if 'ps -eaf | grep abc'
-# end
+#   command "nohup #{node['centroid_weblogic']['middleware_home_dir']}/user_projects/domain/default_domain/startWebLogic.sh > #{node['centroid_weblogic']['middleware_home_dir']}/user_projects/domain/default_domain/weblogic.out &"
+#   not_if "ps -ef | grep startWebLogic.sh | grep default_domain"
+#   guard_interpreter :bash
+#end
+
+bash 'Start WebLogic Domain' do
+  cwd "#{node['centroid_weblogic']['middleware_home_dir']}/user_projects/domains/default_domain/"
+  code <<-EOH
+    nohup ./startWebLogic.sh > weblogic.out &
+    EOH
+  not_if "ps -ef | grep startWebLogic.sh | grep default_domain"
+  guard_interpreter :bash
+end

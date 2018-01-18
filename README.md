@@ -23,6 +23,9 @@ This cookbook will do the following by default:
   4) Create "oracle" user and "oinstall" group.
   5) Install Weblogic 12c as a silent install.
   6) Creates a default domain (default_domain)
+  7) Starts the default domain.
+
+Steps 6 and 7 are optional.
 
 ## Cookbook Usage
 
