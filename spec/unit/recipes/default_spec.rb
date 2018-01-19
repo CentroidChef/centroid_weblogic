@@ -14,21 +14,21 @@ describe 'centroid_weblogic::default' do
     runner.converge(described_recipe)
   end
 
-  context 'WebLogic default_domain is running' do
-    it 'Skips Command' do
-      stub_command('ps -ef | grep startWebLogic.sh | grep default_domain').and_return(0)
-
-      expect { chef_run }.to run_bash("Start WebLogic Domain")
-    end
-  end
-
-  context 'WebLogic default_domain is NOT running' do
-    it 'Runs Command' do
-      stub_command('ps -ef | grep startWebLogic.sh | grep default_domain').and_return(1)
-
-      expect { chef_run }.not_to run_bash("Start WebLogic Domain")
-    end
-  end
+  # context 'WebLogic default_domain is running' do
+  #   it 'Skips Command' do
+  #     stub_command('ps -ef | grep startWebLogic.sh | grep default_domain').and_return(0)
+  #
+  #     expect { chef_run }.to run_bash("Start WebLogic Domain")
+  #   end
+  # end
+  #
+  # context 'WebLogic default_domain is NOT running' do
+  #   it 'Runs Command' do
+  #     stub_command('ps -ef | grep startWebLogic.sh | grep default_domain').and_return(1)
+  #
+  #     expect { chef_run }.not_to run_bash("Start WebLogic Domain")
+  #   end
+  # end
 
   # it 'converges successfully' do
   #   chef_run # expect { chef_run }.to_not raise_error
